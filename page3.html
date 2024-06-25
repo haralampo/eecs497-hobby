@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hobby Recommender</h1>
+        <form id="questionnaireForm">
+            <div class="form-group">
+                <label>3. Your desired social level:</label>
+                <div>
+                    <input type="radio" id="socialLevelIntrovert" name="socialLevel" value="introvert">
+                    <label for="socialLevelIntrovert">Introvert</label>
+                </div>
+                <div>
+                    <input type="radio" id="socialLevelAmbivert" name="socialLevel" value="ambivert">
+                    <label for="socialLevelAmbivert">Ambivert</label>
+                </div>
+                <div>
+                    <input type="radio" id="socialLevelExtrovert" name="socialLevel" value="extrovert">
+                    <label for="socialLevelExtrovert">Extrovert</label>
+                </div>
+            </div>
+            <button type="button" id="nextButton" disabled>Next</button>
+        </form>
+    </div>
+    <script>
+        document.querySelectorAll('input[name="socialLevel"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                document.getElementById('nextButton').disabled = false;
+            });
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            event.preventDefault();
+
+            const socialLevel = document.querySelector('input[name="socialLevel"]:checked').value;
+            localStorage.setItem('socialLevel', socialLevel);
+
+            // Redirect to the next page
+            window.location.href = 'page4.html';
+        });
+    </script>
+</body>
+</html>

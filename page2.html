@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hobby Recommender</h1>
+        <form id="questionnaireForm">
+            <div class="form-group">
+                <label>2. Your desired activity level:</label>
+                <div>
+                    <input type="radio" id="activityLevelLow" name="activityLevel" value="low">
+                    <label for="activityLevelLow">Low</label>
+                </div>
+                <div>
+                    <input type="radio" id="activityLevelModerate" name="activityLevel" value="moderate">
+                    <label for="activityLevelModerate">Moderate</label>
+                </div>
+                <div>
+                    <input type="radio" id="activityLevelHigh" name="activityLevel" value="high">
+                    <label for="activityLevelHigh">High</label>
+                </div>
+            </div>
+            <button type="button" id="nextButton" disabled>Next</button>
+        </form>
+    </div>
+    <script>
+        document.querySelectorAll('input[name="activityLevel"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                document.getElementById('nextButton').disabled = false;
+            });
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const activityLevel = document.querySelector('input[name="activityLevel"]:checked').value;
+
+            // Save values to local storage
+            localStorage.setItem('activityLevel', activityLevel);
+
+            // Redirect to the next page
+            window.location.href = 'page3.html';
+        });
+    </script>
+</body>
+</html>

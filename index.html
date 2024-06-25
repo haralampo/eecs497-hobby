@@ -88,50 +88,21 @@
                     <option value="mental">Veterinarian</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="activityLevel">2. Your desired activity level:</label>
-                <select id="activityLevel" name="activityLevel">
-                    <option value="">Select...</option>
-                    <option value="low">Low</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="high">High</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="socialLevel">3. Your desired social level:</label>
-                <select id="socialLevel" name="socialLevel">
-                    <option value="">Select...</option>
-                    <option value="introvert">Introvert</option>
-                    <option value="ambivert">Ambivert</option>
-                    <option value="extrovert">Extrovert</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="commitment">4. Your desired commitment level:</label>
-                <select id="commitment" name="commitment">
-                    <option value="">Select...</option>
-                    <option value="low">Low</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="high">High</option>
-                    <option value="extremely high">Extremely High</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="weatherFactor">5. Will weather be a factor in your hobby?</label>
-                <select id="weatherFactor" name="weatherFactor">
-                    <option value="">Select...</option>
-                    <option value="warm">Yes (Ocean/Warm Weather)</option>
-                    <option value="cold">Yes (Snow/Cold Weather)</option>
-                    <option value="no">No</option>
-                </select>
-            </div>
-            <button type="submit">Get Hobby Recommendations</button>
+            <button type="button" id="nextButton" disabled>Next</button>
         </form>
-        <div id="recommendations" class="hidden">
-            <h2>Recommended Hobbies:</h2>
-            <ul id="recommendedHobbies"></ul>
-        </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('pastJob').addEventListener('change', function() {
+            document.getElementById('nextButton').disabled = this.value === '';
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            const pastJob = document.getElementById('pastJob').value;
+            localStorage.setItem('pastJob', pastJob);
+
+            // Redirect to the next page
+            window.location.href = 'page2.html';
+        });
+    </script>
 </body>
 </html>

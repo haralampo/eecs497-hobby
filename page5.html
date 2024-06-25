@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hobby Recommender</h1>
+        <form id="questionnaireForm">
+            <div class="form-group">
+                <label>5. Will weather be a factor in your hobby?</label>
+                <div>
+                    <input type="radio" id="weatherFactorWarm" name="weatherFactor" value="warm">
+                    <label for="weatherFactorWarm">Yes (Ocean/Warm Weather)</label>
+                </div>
+                <div>
+                    <input type="radio" id="weatherFactorCold" name="weatherFactor" value="cold">
+                    <label for="weatherFactorCold">Yes (Snow/Cold Weather)</label>
+                </div>
+                <div>
+                    <input type="radio" id="weatherFactorNo" name="weatherFactor" value="no">
+                    <label for="weatherFactorNo">No</label>
+                </div>
+            </div>
+            <button type="button" id="nextButton" disabled>Get Hobby Recommendations</button>
+        </form>
+    </div>
+    <script>
+        document.querySelectorAll('input[name="weatherFactor"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                document.getElementById('nextButton').disabled = false;
+            });
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            event.preventDefault();
+
+            const weatherFactor = document.querySelector('input[name="weatherFactor"]:checked').value;
+            localStorage.setItem('weatherFactor', weatherFactor);
+
+            // Redirect to the next page
+            window.location.href = 'results.html';
+        });
+    </script>
+</body>
+</html>

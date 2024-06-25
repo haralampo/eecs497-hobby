@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hobby Recommender</h1>
+        <form id="questionnaireForm">
+            <div class="form-group">
+                <label>4. Your desired commitment level:</label>
+                <div>
+                    <input type="radio" id="commitmentLow" name="commitment" value="low">
+                    <label for="commitmentLow">Low</label>
+                </div>
+                <div>
+                    <input type="radio" id="commitmentModerate" name="commitment" value="moderate">
+                    <label for="commitmentModerate">Moderate</label>
+                </div>
+                <div>
+                    <input type="radio" id="commitmentHigh" name="commitment" value="high">
+                    <label for="commitmentHigh">High</label>
+                </div>
+                <div>
+                    <input type="radio" id="commitmentExtremelyHigh" name="commitment" value="extremely high">
+                    <label for="commitmentExtremelyHigh">Extremely High</label>
+                </div>
+            </div>
+            <button type="button" id="nextButton" disabled>Next</button>
+        </form>
+    </div>
+    <script>
+        document.querySelectorAll('input[name="commitment"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                document.getElementById('nextButton').disabled = false;
+            });
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            event.preventDefault();
+
+            const commitment = document.querySelector('input[name="commitment"]:checked').value;
+            localStorage.setItem('commitment', commitment);
+
+            // Redirect to the next page
+            window.location.href = 'page5.html';
+        });
+    </script>
+</body>
+</html>
