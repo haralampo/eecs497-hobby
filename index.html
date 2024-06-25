@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hobby Recommender</h1>
+        <form id="questionnaireForm">
+            <div class="form-group">
+                <label for="pastJob">1. Your past job:</label>
+                <select id="pastJob" name="pastJob">
+                    <option value="">Select...</option>
+                    <option value="mental">Accountant, Auditor</option>
+                    <option value="mental">Advertising, Marketing, Promotions, Public Relations, and Sales Manager</option>
+                    <option value="physical">Aircraft Pilot or Flight Engineer</option>
+                    <option value="woodworking">Architect, Surveyor, or Cartographer</option>
+                    <option value="musical">Arts, Design, Entertainment, Sports, and Media Occupations</option>
+                    <option value="food/drink">Building and Grounds Cleaning and Maintenance</option>
+                    <option value="mental">Business Operations or Financial Specialist</option>
+                    <option value="mental">Business Owner</option>
+                    <option value="food/drink">Chef or Head Cook</option>
+                    <option value="mental">Chief Executive</option>
+                    <option value="mental">Chiropractor</option>
+                    <option value="woodworking">Computer Specialist, Mathematical Science</option>
+                    <option value="physical">Construction and Extraction (e.g., Construction Laborer, Electrician)</option>
+                    <option value="mental">Construction Manager</option>
+                    <option value="food/drink">Cook or Food Preparation Worker</option>
+                    <option value="musical">Counselor, Social Worker, or Other Community and Social Service Specialist</option>
+                    <option value="mental">Dentist</option>
+                    <option value="mental">Dietitian or Nutritionist</option>
+                    <option value="food/drink">Don't Know</option>
+                    <option value="woodworking">Engineer</option>
+                    <option value="mental">Engineering Manager</option>
+                    <option value="physical">Farming, Fishing, and Forestry</option>
+                    <option value="mental">Financial Clerk</option>
+                    <option value="food/drink">Food and Beverage Serving Worker (e.g., Bartender, Waiter, Waitress)</option>
+                    <option value="mental">General and Operations Manager</option>
+                    <option value="mental">Health Technologist or Technician</option>
+                    <option value="food/drink">Homemaker</option>
+                    <option value="food/drink">Insurance Sales Agent</option>
+                    <option value="physical">Installation, Maintenance, and Repair</option>
+                    <option value="mental">Lawyer, Judge</option>
+                    <option value="mental">Life Scientist (e.g., Animal, Food, Soil, or Biological Scientist, Zoologist)</option>
+                    <option value="mental">Material Recording, Scheduling, and Dispatching Worker</option>
+                    <option value="food/drink">Military</option>
+                    <option value="physical">Motor Vehicle Operator (e.g., Ambulance, Bus, Taxi, or Truck Driver)</option>
+                    <option value="mental">Nursing, Psychiatric, or Home Health Aide</option>
+                    <option value="food/drink">Not Applicable</option>
+                    <option value="mental">Occupational and Physical Therapist Assistant or Aide</option>
+                    <option value="mental">Operations Specialties Manager (e.g., IT or HR Manager)</option>
+                    <option value="mental">Optometrist</option>
+                    <option value="physical">Other Agriculture, Maintenance, Repair, and Skilled Crafts Occupation</option>
+                    <option value="woodworking">Other Architecture and Engineering Occupation</option>
+                    <option value="mental">Other Business, Executive, Management, Financial Occupation</option>
+                    <option value="creative">Other Education, Training, and Library Occupation</option>
+                    <option value="mental">Other Healthcare Practitioners and Technical Occupation</option>
+                    <option value="mental">Other Healthcare Support Occupation</option>
+                    <option value="food/drink">Other Occupation</option>
+                    <option value="mental">Other Office and Administrative Support Occupation</option>
+                    <option value="musical">Other Professional Occupation</option>
+                    <option value="food/drink">Other Services Occupation</option>
+                    <option value="creative">Other Teacher or Instructor</option>
+                    <option value="physical">Other Transportation Occupation</option>
+                    <option value="food/drink">Personal Care and Service (e.g., Hairdresser, Flight Attendant, Concierge)</option>
+                    <option value="mental">Pharmacist</option>
+                    <option value="mental">Physical Scientist (e.g., Astronomer, Physicist, Chemist, Hydrologist)</option>
+                    <option value="mental">Physician</option>
+                    <option value="mental">Physician Assistant</option>
+                    <option value="mental">Podiatrist</option>
+                    <option value="creative">Postsecondary Teacher (e.g., College Professor)</option>
+                    <option value="creative">Primary, Secondary, or Special Education School Teacher</option>
+                    <option value="physical">Production Occupations</option>
+                    <option value="food/drink">Protective Service (e.g., Fire Fighting, Police Officer, Correctional Officer)</option>
+                    <option value="food/drink">Real Estate Sales Agent</option>
+                    <option value="mental">Registered Nurse</option>
+                    <option value="musical">Religious Worker (e.g., Clergy, Director of Religious Activities or Education)</option>
+                    <option value="food/drink">Retail Sales Worker</option>
+                    <option value="food/drink">Sales Representative</option>
+                    <option value="food/drink">Sales Supervisor, Retail Sales</option>
+                    <option value="mental">Secretary or Administrative Assistant</option>
+                    <option value="musical">Social Scientist and Related Worker</option>
+                    <option value="mental">Supervisor of Administrative Support Workers</option>
+                    <option value="mental">Therapist</option>
+                    <option value="mental">Veterinarian</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="activityLevel">2. Your desired activity level:</label>
+                <select id="activityLevel" name="activityLevel">
+                    <option value="">Select...</option>
+                    <option value="low">Low</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="socialLevel">3. Your desired social level:</label>
+                <select id="socialLevel" name="socialLevel">
+                    <option value="">Select...</option>
+                    <option value="introvert">Introvert</option>
+                    <option value="ambivert">Ambivert</option>
+                    <option value="extrovert">Extrovert</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="commitment">4. Your desired commitment level:</label>
+                <select id="commitment" name="commitment">
+                    <option value="">Select...</option>
+                    <option value="low">Low</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                    <option value="extremely high">Extremely High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="weatherFactor">5. Will weather be a factor in your hobby?</label>
+                <select id="weatherFactor" name="weatherFactor">
+                    <option value="">Select...</option>
+                    <option value="warm">Yes (Ocean/Warm Weather)</option>
+                    <option value="cold">Yes (Snow/Cold Weather)</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <button type="submit">Get Hobby Recommendations</button>
+        </form>
+        <div id="recommendations" class="hidden">
+            <h2>Recommended Hobbies:</h2>
+            <ul id="recommendedHobbies"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
